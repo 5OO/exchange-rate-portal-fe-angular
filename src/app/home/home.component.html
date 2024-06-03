@@ -1,0 +1,32 @@
+<main class="container mt-5">
+  <h1 class="mb-4">Exchange Rates</h1>
+  <p>
+    The most recent exchange rates of the euro against foreign currencies are displayed below.
+    For historical exchange rates, click on the respective currency link.
+  </p>
+  <div *ngIf="exchangeRates.length">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Currency</th>
+        <th scope="col">Currency Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rate of exchangeRates">
+        <td>{{ rate.currency }}</td>
+        <td>{{ rate.currencyName }}</td>
+        <td>{{ rate.entityLocation }}</td>
+        <td>{{ rate.rate }}</td>
+        <td>{{ rate.date }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!exchangeRates.length">
+    <p>Loading exchange rates...</p>
+  </div>
+</main>
