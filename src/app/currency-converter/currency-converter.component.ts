@@ -119,19 +119,24 @@ export class CurrencyConverterComponent {
   }
 
   async convertCurrency(): Promise<void> {
+    if (this.conversionRequest.fromCurrency === this.conversionRequest.toCurrency) {
+      this.conversionResult = { ...this.conversionRequest, convertedAmount: this.conversionRequest.amount };
+      this.errorMessage = null;
+      return;
+    }
+
     try {
       this.conversionResult = await firstValueFrom(this.exchangeRateService.convertCurrency(this.conversionRequest));
       this.errorMessage = null;
     } catch (error) {
       this.conversionResult = null;
-      this.errorMessage = this.getErrorMessage(error);
+      this.errorMessage = error as string;
     }
   }
 
-  private getErrorMessage(error: unknown): string {
-    if (error instanceof Error) {
-      return error.message;
+  onInputChange(): void {
+    if (this.conversionRequest.fromCurrency && this.conversionRequest.toCurrency && this.conversionRequest.amount > 0) {
+      this.convertCurrency();
     }
-    return String(error);
   }
 }
