@@ -1,23 +1,29 @@
 <div class="container mt-5">
   <h1 class="mb-4">Currency Converter</h1>
   <form (submit)="convertCurrency()">
-    <div class="mb-3">
-      <label for="fromCurrency" class="form-label">From Currency</label>
-      <input type="text" id="fromCurrency" [(ngModel)]="conversionRequest.fromCurrency" name="fromCurrency" class="form-control" required>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="fromCurrency" class="form-label">From Currency</label>
+        <input type="text" id="fromCurrency" [(ngModel)]="conversionRequest.fromCurrency" name="fromCurrency" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="toCurrency" class="form-label">To Currency</label>
+        <input type="text" id="toCurrency" [(ngModel)]="conversionRequest.toCurrency" name="toCurrency" class="form-control" required>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="toCurrency" class="form-label">To Currency</label>
-      <input type="text" id="toCurrency" [(ngModel)]="conversionRequest.toCurrency" name="toCurrency" class="form-control" required>
+    <div class="row">
+      <div class="col-md-8 mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" id="amount" [(ngModel)]="conversionRequest.amount" name="amount" class="form-control" required>
+      </div>
+      <div class="col-md-4 mb-3 align-self-end">
+        <button type="submit" class="btn btn-primary">Convert</button>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="amount" class="form-label">Amount</label>
-      <input type="number" id="amount" [(ngModel)]="conversionRequest.amount" name="amount" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Convert</button>
   </form>
   <div *ngIf="conversionResult" class="mt-4">
     <h2>Conversion Result</h2>
-    <p>Converted Amount: {{ conversionResult.convertedAmount.toFixed(4) }}</p>
+    <p>Converted Amount: {{ conversionResult.convertedAmount.toFixed(4) }} {{ conversionRequest.toCurrency }}</p>
     <p>From {{ conversionRequest.fromCurrency }} to EUR Currency Rate: {{ conversionResult.fromCurrencyRate.toFixed(4) }}</p>
     <p>From EUR to {{ conversionRequest.toCurrency }} Currency Rate: {{ conversionResult.toCurrencyRate.toFixed(4) }}</p>
   </div>
