@@ -17,7 +17,9 @@
       </thead>
       <tbody>
       <tr *ngFor="let rate of exchangeRates">
-        <td>{{ rate.currency }}</td>
+        <td>
+          <a [routerLink]="['history/', rate.currency]">{{ rate.currency }}</a>
+        </td>
         <td>{{ rate.currencyName }}</td>
         <td>{{ rate.entityLocation }}</td>
         <td>{{ rate.rate }}</td>

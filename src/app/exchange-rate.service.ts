@@ -21,4 +21,8 @@ export class ExchangeRateService {
   getLatestRates(): Observable<ExchangeRateDTO[]> {
     return this.http.get<ExchangeRateDTO[]>(this.apiUrl);
   }
+
+  getHistoricalRates(currency: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/history/${currency}`);
+  }
 }

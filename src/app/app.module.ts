@@ -4,6 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {CommonModule} from "@angular/common";
+import { CurrencyHistoryComponent } from './currency-history/currency-history.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {CommonModule} from "@angular/common";
     BrowserModule,
     RouterModule.forRoot(routes),
     CommonModule,
-    HomeComponent
+    HomeComponent,
+    CurrencyHistoryComponent
   ],
   providers: [],
   bootstrap:[]
