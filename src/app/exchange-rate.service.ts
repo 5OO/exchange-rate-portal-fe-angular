@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 
 export interface ExchangeRateDTO {
   currency: string;
@@ -23,6 +23,13 @@ export class ExchangeRateService {
   }
 
   getHistoricalRates(currency: string, page: number, size: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/history/${currency}?page=${page}&size=${size}`);
+    return this.http.get<any>(`${this.apiUrl}/history/${currency}?page=${page}&size=${size}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    return throwError(error.error.message || 'Server error')
   }
 }

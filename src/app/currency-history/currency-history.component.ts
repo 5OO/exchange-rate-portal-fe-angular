@@ -18,6 +18,7 @@ export class CurrencyHistoryComponent implements OnInit {
   currentPage: number = 0;
   totalPages: number = 0;
   pageSize: number = 250;
+  errorMessage: string = '';
 
   constructor(private route: ActivatedRoute, private exchangeRateService: ExchangeRateService) {}
 
@@ -28,13 +29,20 @@ export class CurrencyHistoryComponent implements OnInit {
 
   fetchHistoricalRates(): void {
     this.exchangeRateService.getHistoricalRates(this.currency, this.currentPage, this.pageSize)
-      .subscribe(data => {
-        this.historicalRates = data._embedded.exchangeRateDTOList;
-        if (this.historicalRates.length > 0) {
-          this.currencyName = this.historicalRates[0].currencyName;
-          this.entityLocation = this.historicalRates[0].entityLocation;
+      .subscribe({
+        next: data => {
+          this.historicalRates = data._embedded.exchangeRateDTOList;
+          if (this.historicalRates.length > 0) {
+            this.currencyName = this.historicalRates[0].currencyName;
+            this.entityLocation = this.historicalRates[0].entityLocation;
+          }
+          this.totalPages = data.page.totalPages;
+          this.errorMessage = '';
+        },
+        error: error => {
+          this.errorMessage = error;
+          this.historicalRates = [];
         }
-        this.totalPages = data.page.totalPages;
       });
   }
   goToPage(page: number): void {

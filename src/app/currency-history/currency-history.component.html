@@ -1,6 +1,9 @@
 <main class="container mt-5">
   <h1 class="mb-4">Exchange Rate History for {{ currency }}</h1>
   <p>The exchange rates of the euro against foreign currencies of the European Central Bank (included in database since 30/09/2014) are presented according to their announcement date.</p>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
   <div *ngIf="historicalRates.length">
     <p>Currency name: {{ currencyName }}</p>
     <p>Currency location: {{ entityLocation }}</p>
@@ -28,7 +31,7 @@
       <button class="btn btn-primary" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages - 1">Next</button>
     </div>
   </div>
-  <div *ngIf="!historicalRates.length">
+  <div *ngIf="!historicalRates.length && !errorMessage">
     <p>Loading exchange rates history...</p>
   </div>
 </main>
