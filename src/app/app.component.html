@@ -4,7 +4,7 @@
 
 <main class="main">
   <nav class="navbar">
-    <a routerLink="/" routerLinkActive="active" class="nav-item">Home</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">Home</a>
     <a routerLink="/converter" routerLinkActive="active" class="nav-item">Currency Converter</a>
   </nav>
   <router-outlet></router-outlet>
