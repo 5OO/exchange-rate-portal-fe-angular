@@ -7,25 +7,28 @@ This project is the frontend for the Exchange Rate Portal, a web application tha
 ### Home View
 - Displays the latest exchange rates fetched from the Bank of Lithuania.
 - Provides links to view historical exchange rates for each currency.
-![Screenshot 2024-06-05 at 01 59 18](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/587ae9db-a598-4774-ae27-f69551701e11)
+ 
+  ![Screenshot 2024-06-05 at 02 27 21](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/31dafb85-a529-4bd1-9114-5851ac843f34)
 
 ### Exchange Rate History View
 - Displays the historical exchange rates for a selected currency.
 - Supports pagination for easy navigation through historical data.
-![Screenshot 2024-06-05 at 02 00 10](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/67084fd8-34b1-449b-b27a-591221faa40f)
-![Screenshot 2024-06-05 at 02 00 30](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/35ae4b57-119b-406c-bc29-c5b27fbdcdfe)
+ ![Screenshot 2024-06-05 at 02 24 34](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/2e8a042a-24f1-4fa1-9684-9345a86b9ae3)
+![Screenshot 2024-06-05 at 02 26 06](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/119aadf7-abf6-438d-9e7c-8947c139d761)
 
 ### Currency Converter View
 - Allows users to enter an amount and select currencies to convert between.
 - Displays the converted amount using the latest exchange rates.
-![Screenshot 2024-06-05 at 02 00 42](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/699c4e65-91d7-4c5a-b179-6ac76d380bf1)
-![Screenshot 2024-06-05 at 02 01 13](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/fc0c637c-9fd2-46ce-a52c-341c8d032dac)
-![Screenshot 2024-06-05 at 02 01 30](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/2b755b73-abe3-4953-a772-2ebf33fa4f7d)
+ ![Screenshot 2024-06-05 at 02 17 02](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/e752a515-8d25-40b8-a2d3-2310ceb10cbd)
+![Screenshot 2024-06-05 at 02 17 28](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/3b3d0153-9b86-4a2a-898c-3e911628043c)
+![Screenshot 2024-06-05 at 02 17 46](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/571cc678-0973-4ccb-84b6-9ccea83a1b57)
 
 ### Error Handling
-In case the ```lb.lt`` server does not have historical rates available to display, a respective message is delivered to the user in the UI. Example: `"No exchange rates found for currency: XOF"`.
-![Screenshot 2024-06-05 at 02 04 01](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/38c8732a-59cb-4bef-87fa-3fb4b3cc44f5)
+  In case the ```lb.lt`` server does not have historical rates available to display, a respective message is delivered to the user in the UI. Example: `"No exchange rates   found for currency: XOF"`.
+    ![Screenshot 2024-06-05 at 02 23 32](https://github.com/5OO/exchange-rate-portal-fe-angular/assets/27925052/1085fe0f-16d5-4403-972b-d34ef3578c8b)
 
+
+    
 ## Technologies Used
 
 - **Framework**: Angular 18
