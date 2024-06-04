@@ -12,10 +12,10 @@ import { CurrencyHistoryComponent } from './currency-history/currency-history.co
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     CommonModule,
+    CurrencyHistoryComponent,
     HomeComponent,
-    CurrencyHistoryComponent
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap:[]
