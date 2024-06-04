@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {CommonModule} from "@angular/common";
 import { CurrencyHistoryComponent } from './currency-history/currency-history.component';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CurrencyHistoryComponent } from './currency-history/currency-history.co
     CurrencyHistoryComponent,
     HomeComponent,
     RouterModule.forRoot(routes),
+    CurrencyConverterComponent
   ],
   providers: [],
   bootstrap:[]

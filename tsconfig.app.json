@@ -9,6 +9,9 @@
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/app/home/home.component.ts",
+    "src/app/currency-history/currency-history.component.ts",
+    "src/app/currency-converter/currency-converter.component.ts"
   ]
 }
