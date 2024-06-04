@@ -17,9 +17,9 @@
   </form>
   <div *ngIf="conversionResult" class="mt-4">
     <h2>Conversion Result</h2>
-    <p>Converted Amount: {{ conversionResult.convertedAmount }}</p>
-    <p>From Currency Rate: {{ conversionResult.fromCurrencyRate }}</p>
-    <p>To Currency Rate: {{ conversionResult.toCurrencyRate }}</p>
+    <p>Converted Amount: {{ conversionResult.convertedAmount.toFixed(4) }}</p>
+    <p>From {{ conversionRequest.fromCurrency }} to EUR Currency Rate: {{ conversionResult.fromCurrencyRate.toFixed(4) }}</p>
+    <p>From EUR to {{ conversionRequest.toCurrency }} Currency Rate: {{ conversionResult.toCurrencyRate.toFixed(4) }}</p>
   </div>
   <div *ngIf="errorMessage" class="alert alert-danger mt-4">
     {{ errorMessage }}
